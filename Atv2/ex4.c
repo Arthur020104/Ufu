@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+/*
+Nome:Arthur Carvalho Oliveira
+Matrícula:12211BSI220
+*/
 void main(void)
 {
     char M[100] = "The quick brown fox jumps over the lazy dog";
