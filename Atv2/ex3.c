@@ -2,6 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+/*
+Nome:Arthur Carvalho Oliveira
+Matrícula:12211BSI220
+*/
 
 const int STR_LEN = 30;
 const int STR_ARR_LEN = 5;
