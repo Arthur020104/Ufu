@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+/*
+Nome:Arthur Carvalho Oliveira
+Matrícula:12211BSI220
+*/
+
 #define QUANTIDADE 21
 void main(void)
 {
