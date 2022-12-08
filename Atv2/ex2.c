@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+Nome:Arthur Carvalho Oliveira
+Matrícula:12211BSI220
+*/
+
 float main(){
     printf("N:");
     int N;
