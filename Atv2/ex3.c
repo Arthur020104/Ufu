@@ -10,8 +10,6 @@ Matrícula:12211BSI220
 const int STR_LEN = 30;
 const int STR_ARR_LEN = 5;
 
-int calculoordem(char s[]);
-
 int main()
 {
     char string[5][30];
@@ -24,13 +22,13 @@ int main()
     {
         tmp[i] =string[0][i]; 
     }
-    for(int j = (STR_ARR_LEN-2);j>=0;j--)
+    for(int i = 0;i<STR_ARR_LEN;i++)
     {
-        if(strcmp(string[j+1],string[j])< 0)
+        if(strcmp(string[i],tmp)< 0)
         {
             for(int h =0;h<12;h++)
             {
-                tmp[h] = string[j+1][h];
+                tmp[h] = string[i][h];
             }
         }
     }
