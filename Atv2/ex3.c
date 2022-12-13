@@ -26,7 +26,7 @@ int main()
     {
         if(strcmp(string[i],tmp)< 0)
         {
-            for(int h =0;h<12;h++)
+            for(int h =0;h<STR_LEN;h++)
             {
                 tmp[h] = string[i][h];
             }
