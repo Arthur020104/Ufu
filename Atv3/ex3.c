@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 void decrescente(int n);
-void crescente(int n);
+int crescente(int n);
 void main(void)
 {
     printf("\n crescente:"); crescente(15);
@@ -10,37 +10,30 @@ void main(void)
 
 }
 
-int *cres= NULL;
-void crescente(int n)
+int crescente(int n)
 {
-    if(!(cres))
+    if(n==0)
     {
-        cres = (int*)malloc(sizeof(int));
-        *cres = n;
-        n = 0;
-        crescente(n);
-    }
-    else if(n==*cres)
-    {
-        printf(" %d",n);
-        return;
+        printf("%d ",0);
+        return 0;
     }
     else
     {
-        printf(" %d",n);
-        crescente((++n));
+        int x = 1+crescente(--n);
+        printf("%d ",x);
+        return x;
     }
 }
 void decrescente(int n)
 {
-    if(n <=0)
+    if(n==0)
     {
-        printf(" %d",n);
+        printf("%d ",n);
         return;
     }
     else
     {
-        printf(" %d",n);
-        decrescente((--n));
+        printf("%d ",n);
+        decrescente(--n);
     }
 }
