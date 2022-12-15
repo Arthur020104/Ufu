@@ -1,31 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 unsigned long long int FibonacciIterativo(int n);
 unsigned long long int FibonacciRecursivo (int n);
 int main(void) 
 {
     int i;
-    clock_t start, end;
-    double execution_time1,execution_time2;
-    start = clock();
-
+    //A funcao abaixo nao consegue satisfazer seu objetivo
+    //por nao conseguir retornar o numero de por exemplo fibonacci(100)
+    //que seria 354224848179261915075, devido a tal numero exceder a capacidade
+    //do long long 
     for (i = 1; i < 100; i++)
     printf("\n termo %d: %llu", i, FibonacciIterativo(i));
 
-    end = clock();
-    execution_time1 = ((double)(end - start))/CLOCKS_PER_SEC;
-    start = clock();
-
+    //A funcao abaixo nao termina sua execuçao com numeros maiores
+    //, devido a grander quantidade de processamento necessário para fazer 
+    //sua execuçao.Ex: FibonacciRecursivo (100) necessita do calculo
+    //de FibonacciRecursivo (99)+FibonacciRecursivo (98)
+    //que por consequencia FibonacciRecursivo (99) e FibonacciRecursivo (98)
+    //que necessitam do calculo de FibonacciRecursivo (n-1) e FibonacciRecursivo (n-2)...
+    //No meu computador o script rodou por 30 min e conseguiu retornar apenas até
+    //fibonacci de 52
     for (i = 1; i < 100; i++)
     printf("\n termo %d: %llu", i, FibonacciRecursivo (i));
-
-    end = clock();
-    execution_time2 = ((double)(end - start))/CLOCKS_PER_SEC;
-
-    printf("FibonacciIterativo em segundos: %f", execution_time1);
-    printf("FibonacciRecursivo em segundos: %f", execution_time1);
     return 0;
 }
 
@@ -62,3 +59,4 @@ unsigned long long int FibonacciRecursivo (int n)
         return n;
     }
 }
+
