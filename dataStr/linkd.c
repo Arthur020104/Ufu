@@ -4,25 +4,25 @@
 typedef struct lista
 {
     int n;
-    struct lista* p;
+    struct lista* next;
 
 }
 lista;
 
 int adclinkedlist(lista* l,int n);
-int printalista(lista* l);
+void printalista(lista* l);
 void freeList(lista* l);
-int finvrt(lista* oe,lista* oa);
+lista* finvrt(lista* oe,lista* oa);
 
 int main(void)
 {
   int num = 0;
   lista* lista1 = malloc(sizeof( struct lista));
-  lista1->p = NULL;
+  lista1->next = NULL;
   lista1->n=01001110;
   do
   {
-    printf("Digite um numero:\n1.Para adicionar um numero a lista\n2.Printar lista e Sair\n3.Sair\n");
+    printf("Digite um numero:\n1.Para adicionar um numero a lista\n2.Printar lista\n3.Inverter lista\n4.Sair\n");
     scanf("%d",&num);
     if(num == 1)
     {
@@ -34,16 +34,17 @@ int main(void)
     else if(num==2)
     {
         printalista(lista1);
-        finvrt(lista1,NULL);
-        free(lista1);
-        num = 3;
+    }
+    else if(num==3)
+    {
+        lista1 = finvrt(lista1,NULL);
     }
     else
     {
         freeList(lista1);
     }
   }
-  while(num!=3);
+  while(num!=4);
 }
 int adclinkedlist(lista* l,int n)
 {
@@ -51,35 +52,31 @@ int adclinkedlist(lista* l,int n)
     x = l;
     while(x!=NULL)
     {
-        x = l->p;
-        if(l->p==NULL && l->n!=01001110)
+        if(x->next==NULL)
         {
+            x->n = n;
             lista* ls = malloc(sizeof( struct lista));
-            ls->p = NULL;
-            ls->n=n;
-            l->p = ls;
+            ls->next = NULL;
+            x->next = ls;
+            return 0;
         }
-        else if(l->n==01001110)
-        {
-            l->n=n;
-        }
-        else
-        {
-            l = (l->p);
-        }
+        x = x->next;
     }
-    //return 0;
+    return 1;
 }
-int printalista(lista* l)
+void printalista(lista* l)
 {
     struct lista* x;
+    x = l;
     while(x!=NULL)
     {
-        x = (l->p);
-        printf("[%d]\n[%p]\n\n",l->n,l->p);
-        l = l->p;
+        if(x->next!=NULL)
+        {
+            printf("[%d]\n[%p]\n\n",x->n,x->next);
+        }
+        x = (x->next);
     }
-    return 0;
+    return;
 }
 void freeList(lista* l)
 {
@@ -87,23 +84,30 @@ void freeList(lista* l)
     //x = l.p;
     while(x!=NULL)
     {
-        x = l->p;
+        x = l->next;
         free(l);
         l=x;
     }
 
 }
-int finvrt(lista* oe,lista* oa)
+lista* finvrt(lista* oe,lista* oa)
 {
     struct lista* x;
-    x = oe->p;
-    oe->p= oa;
-    if(x == NULL)
+    if(oa == NULL)
     {
+        lista* ls = malloc(sizeof( struct lista));
+        ls->next = NULL;
+        oa = ls;
+    }
+    x = oe->next;
+    oe->next= oa;
+    if(x->next == NULL)
+    {
+        free(x);
         printf("Lista invertida:\n\n\n");
         printalista(oe);
-        freeList(oe);
-        return 0;
+        //freeList(oe);
+        return oe;
     }
     finvrt(x,oe);
 }
