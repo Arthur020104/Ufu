@@ -1,0 +1,15 @@
+3-
+a) Atribui o valor 10 à variável a.
+b) Não funciona.
+c) Não funciona.
+d) Não funciona.
+e) Não funciona.
+f) Não funciona.
+g) Não funciona.
+h) Não funciona.
+i) Atribui o endereço da variável a ao ponteiro P1 e atribui o valor da variável apontada por P1 a P2.
+j) Não funciona.
+k) Atribui o valor contido no endereço de memória apontado por P1 ao endereço de memória apontado por P2.
+l) Não funciona.
+m) Atribui a P3 o endereço de memória do ponteiro P2.
+n) Atribui o valor contido no endereço de memória apontado por P1 ao endereço de memória apontado pelo ponteiro apontado por P3.

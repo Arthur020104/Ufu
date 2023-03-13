@@ -9,6 +9,7 @@ typedef struct lista
 }
 lista;
 
+lista* delElls(lista* head,int index);
 int adclinkedlist(lista* l,int n);
 void printalista(lista* l);
 void freeList(lista* l);
@@ -38,6 +39,13 @@ int main(void)
     else if(num==3)
     {
         lista1 = finvrt(lista1,NULL);
+    }
+    else if(num==5)
+    {
+        int n;
+        printf("Index: ");
+        scanf("%d",&n);
+        lista1 = delElls(lista1, n);
     }
     else
     {
@@ -110,4 +118,24 @@ lista* finvrt(lista* oe,lista* oa)
         return oe;
     }
     finvrt(x,oe);
+}
+lista* delElls(lista* head,int index)
+{
+    lista *l = head;
+    lista *ls = NULL;
+    for(int i=0; i < index;i++)
+    {
+        ls = l;
+        l = l->next;
+    }
+    if(ls != NULL)
+    {
+        ls -> next = l->next;
+        free(l);
+        return head;
+    }
+    head = l->next;
+    free(l);
+    return head;
+
 }

@@ -1,3 +1,5 @@
+/*Nome:Arthur Carvalho Oliveira
+Matricula:12211BSI220*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h> // biblioteca time.h
@@ -15,7 +17,6 @@ struct funclog{
     char evento;
  
 };
- 
 void registro(FILE *funcionarios, FILE *log) {
     struct funcionario funcio;
     printf("Cpf:\n");
@@ -89,7 +90,6 @@ void listagem_funcionarios(FILE *funcionarios) {
     }
     }
 }
- 
 void listagem_log(FILE *log) {
     rewind(log);
     struct funclog x;
@@ -105,13 +105,9 @@ void listagem_log(FILE *log) {
     printf("Evento:%c\n", x.evento);
     }
 }
- 
 int main() {
-    // abrir arquivos (completar). Sugestão: tentar abrir com "rb+", e se não abrir, tentar abrir com "wb+", 
-    // e se não abrir, informar o usuário que não foi possível
     FILE *funcionarios;
     FILE *log;
- 
     funcionarios = fopen("funcionarios.bin","rb+");
     log = fopen("log.bin","rb+");
     if(!funcionarios || !log)
@@ -124,7 +120,6 @@ int main() {
         return 1;
     }
     }
- 
     // a partir daqui nesta função main() o código não deve ser alterado
     int opcao;
     do {
@@ -137,7 +132,6 @@ int main() {
         printf("\n\n\n");
     }
     } while (opcao != 0);
- 
     fclose(funcionarios);
     fclose(log);
     return 0;
