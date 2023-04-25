@@ -6,7 +6,7 @@ double arredondar(double num, int casasDecimais) {
     double fator = pow(10, casasDecimais);
     return round(num * fator) / fator;
 }
-double sqrtB(int n, double lower, double upper)
+double sqrtB(float n, double lower, double upper)
 {
     double x = lower + ((upper - lower) / 2);
     x = arredondar(x,12);
@@ -28,9 +28,9 @@ double sqrtB(int n, double lower, double upper)
 
 int main(void)
 {
-    int n;
+    float n;
     printf("Deseja calcular raiz quadrada de qual numero: ");
-    scanf("%d",&n);
+    scanf("%f",&n);
     if(n >= 1)
     {
         printf("Resultado:%f", sqrtB(n, 1.0, n));
