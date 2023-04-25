@@ -35,9 +35,13 @@ int main(void)
     {
         printf("Resultado:%f", sqrtB(n, 1.0, n));
     }
-    else
+    else if(n < 1 && n >= 0)
     {
         printf("Resultado:%f", sqrtB(n, n, 1));
+    }
+    else
+    {
+        return 1;
     }
     return 0;
 }
