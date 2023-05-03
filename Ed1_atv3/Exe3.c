@@ -30,5 +30,3 @@ void Inverte(Pilha *P, Fila *F)
     return;
 }
 
-// A função tem como pré-condição que não existe nada definido
-// A função tem como pós-condição a liberação da memória da fila.
