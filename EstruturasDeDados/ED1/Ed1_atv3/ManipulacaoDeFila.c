@@ -98,7 +98,12 @@ int inserirNaFrente(fila *f, char x)
 		return 1;	// true
 	}
 }
-
+/*
+ * Entrada: uma fila e um caractere
+ * Saida: 1 se bem sucedida, 0 caso contrario
+ * Pre-condicao: fila tem que ser valida e caractere tambem
+ * Pos-condicao: conteudo da pilha alterado
+ */
 int inserirNaOrdem(fila* f, char x)
 {
    if (cheia(f) == 1)
@@ -137,6 +142,12 @@ int retirarNaOrdemInversa(fila *f, char *x)
 		return 1;	// true
 	}
 }
+/*
+ * Entrada: uma fila e um caractere passado por referencia
+ * Saida: 1 se bem sucedida, 0 caso contrario
+ * Pre-condicao: fila tem que ser valida
+ * Pos-condicao: conteudo da fila alterado
+ */
 int retirarNaOrdem(fila *f, char *x)
 {
 	if (vazia(f) == 1)

@@ -1,0 +1,27 @@
+5.
+a)
+Não é possível a implementação de um deque com todas as suas funcionalidades, como inserção e remoção em ambas as extremidades, usando apenas uma pilha. No entanto, é possível criar um deque com apenas uma extremidade, o que o torna um caso especial de um deque.
+Assim, o pseudocódigo para implementar uma pilha com um deque seria o seguinte :
+deque = CriaPilha()
+push(deque, 1)
+push(deque, 2)
+push(deque, 3)//deque[3,2,1]
+x = pop(deque)//deque[2,1]
+x// x = 3
+x = pop(deque)//deque[1]
+x//x=2
+x = pop(deque)//deque[]
+x//x=1
+
+b)Não é possível implementar um deque com todas as suas funcionalidades, como inserção e remoção em ambas as extremidades, usando apenas uma fila. No entanto, é possível criar um deque no qual a inserção ocorra apenas em uma extremidade e a remoção ocorra na extremidade oposta, tornando-o assim um caso especial de deque.
+deque = CriaFila()
+enfileira(&deque, 1)
+enfileira(&deque, 2)
+enfileira(&deque, 3)
+deque //deque[1,2,3]
+x = desenfileira(deque) // deque[2,3]
+x// x = 1
+x = desenfileira(deque) // deque[3]
+x// x = 2
+x = desenfileira(deque) //  deque[]
+x// x = 3
