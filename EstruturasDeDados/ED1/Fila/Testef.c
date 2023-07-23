@@ -29,7 +29,7 @@ int main(void)
         }
         else if( input == 3)
         {
-            printFila(&f);
+            printFila(f);
         }
     }
     while(input < 4 && input > 0 && !filaVazia(&f));

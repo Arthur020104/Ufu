@@ -20,5 +20,10 @@ int Comb(int n, int k)
 }
 void main(void)
 {
-    printf("%d",Comb(10,4));
+    int a,k;
+    printf("\nDigite o valor de n:");
+    scanf("%d",&a);
+    printf("\nDigite o valor de k:");
+    scanf("%d",&k);
+    printf("%d",Comb(a,k));
 }
